@@ -1,0 +1,14 @@
+# - Config file for the GLV package
+# It defines the following variables
+#  GLV_INCLUDE_DIR - include directories for GLV
+#  GLV_LIBRARY     - libraries to link against for GLV
+
+# Compute paths
+get_filename_component(SELF_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+set(GLV_INCLUDE_DIR "@CMAKE_INSTALL_PREFIX@/include")
+
+if(NOT TARGET GLV)
+  include("${SELF_DIR}/GLVTargets.cmake")
+endif()
+
+set(GLV_LIBRARY GLV)

@@ -1,0 +1,15 @@
+<package>
+  <name>glv</name>
+  <version>0.0.1</version>
+  <description>
+    GLV (Graphics Library of Views)
+  </description>
+  <url>https://github.com/tingelst/GLV.git</url>
+  <maintainer email="lars.tingelstad@ntnu.no">Lars Tingelstad</maintainer>
+  <license>BSD</license>
+  <buildtool_depend>cmake</buildtool_depend>
+  <run_depend>catkin</run_depend>
+  <export>
+    <build_type>cmake</build_type>
+  </export>
+</package>

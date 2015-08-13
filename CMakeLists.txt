@@ -109,4 +109,14 @@ endif(NOT NO_EXAMPLES)
 
 # installation
 install(FILES ${GLV_HEADERS} DESTINATION "${CMAKE_INSTALL_PREFIX}/include/GLV")
-install(TARGETS GLV DESTINATION "${CMAKE_INSTALL_PREFIX}/lib")
+install(TARGETS GLV
+  EXPORT GLVTargets
+  DESTINATION "${CMAKE_INSTALL_PREFIX}/lib")
+
+export(TARGETS GLV FILE "${PROJECT_BINARY_DIR}/GLVTargets.cmake")
+export(PACKAGE GLV)
+configure_file(GLVConfig.cmake.in
+  ${PROJECT_BINARY_DIR}/GLVConfig.cmake @ONLY)
+install(FILES ${PROJECT_BINARY_DIR}/GLVConfig.cmake DESTINATION share/GLV)
+install(EXPORT GLVTargets DESTINATION share/GLV)
+install(FILES package.xml DESTINATION share/GLV)
